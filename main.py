@@ -1,5 +1,5 @@
 from functies import *
-version = "v0.0.1-alpha"
+version = "v1.0.1-alpha"
 
 
 def main():
