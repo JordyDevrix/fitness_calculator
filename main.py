@@ -1,10 +1,11 @@
 from functies import *
-version = "v1.0.1-alpha"
+version = "v1.0.2-alpha"
 
 
 def main():
     print(version)
-    while True:
+    running = True
+    while running:
         print_hoofdmenu()
         keuze = input()
         if keuze == '1':
@@ -27,10 +28,11 @@ def main():
             hfmax = input("HFmax: ")
             print("Karvonen: %.2f" % bereken_karvonen(hfwerk, hfrust, hfmax), "\n")
         elif keuze == '5':
-            break
+            print("Ending process")
+            running = False
         else:
             print("Geen keuze gemaakt\nAutomatisch afsluiten gestart")
-            break
+            running = False
 
 
 if __name__ == '__main__':

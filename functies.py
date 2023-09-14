@@ -1,30 +1,24 @@
 def bereken_bmi(gewicht, lengte_cm):
     lengte_m = float(lengte_cm)/100
-    bmi = float(gewicht)/(pow(float(lengte_m), 2))
-    return bmi
+    return float(gewicht)/(pow(float(lengte_m), 2))
 
 
 def bereken_bmr(geslacht, gewicht, lengte_cm, leeftijd):
     geslacht = geslacht.lower().replace(" ", "")
     if geslacht == "man" or geslacht == "men" or geslacht == "mann":
-        bmr = (10 * float(gewicht)) + (6.25 * float(lengte_cm)) - (5 * float(leeftijd)) + 5
-        return bmr
+        return (10 * float(gewicht)) + (6.25 * float(lengte_cm)) - (5 * float(leeftijd)) + 5
     elif geslacht == "woman" or geslacht == "women" or geslacht == "vrouw":
-        bmr = (10 * float(gewicht)) + (6.25 * float(lengte_cm)) - (5 * float(leeftijd)) - 161
-        return bmr
+        return (10 * float(gewicht)) + (6.25 * float(lengte_cm)) - (5 * float(leeftijd)) - 161
     else:
-        bmr = 0.00
-        return bmr
+        raise Exception("Geslacht " + geslacht + " is niet geldig")
 
 
 def bereken_epoc(intensiteit, duur):
-    epoc = 0.0215 * float(intensiteit) * float(duur)
-    return epoc
+    return 0.0215 * float(intensiteit) * float(duur)
 
 
 def bereken_karvonen(hfwerk, hfrust, hfmax):
-    karvonen = ((float(hfwerk) - float(hfrust)) / (float(hfmax) - float(hfrust)))*100
-    return karvonen
+    return ((float(hfwerk) - float(hfrust)) / (float(hfmax) - float(hfrust)))*100
 
 
 def print_hoofdmenu():
