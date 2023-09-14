@@ -1,31 +1,32 @@
 from functies import *
-version = "v1.0.2-alpha"
+version = "v1.0.3-alpha"
 
 
 def main():
-    print(version)
+    print("Welkom bij de fitness app", version)
     running = True
     while running:
         print_hoofdmenu()
         keuze = input()
         if keuze == '1':
-            gewicht = input("gewicht: ")
-            lengte = input("lengte: ")
-            print("BMI: %.2f" % bereken_bmi(gewicht, lengte), "\n")
+            gewicht = int(input("gewicht: "))
+            lengte = int(input("lengte: "))
+            print("BMI: %.2f" % bereken_bmi(gewicht, lengte))
+            print(bmi_orde(bereken_bmi(gewicht, lengte)), "\n")
         elif keuze == '2':
             geslacht = input("geslacht: ")
-            gewicht = input("gewicht: ")
-            lengte = input("lengte: ")
-            leeftijd = input("leeftijd: ")
+            gewicht = int(input("gewicht: "))
+            lengte = int(input("lengte: "))
+            leeftijd = int(input("leeftijd: "))
             print("BMR: %.2f" % bereken_bmr(geslacht, gewicht, lengte, leeftijd), "\n")
         elif keuze == '3':
-            intensiteit = input("intensiteit: ")
-            duur = input("duur: ")
+            intensiteit = int(input("intensiteit: "))
+            duur = int(input("duur: "))
             print("EPOC: %.2f" % bereken_epoc(intensiteit, duur), "\n")
         elif keuze == '4':
-            hfwerk = input("HFwerk: ")
-            hfrust = input("HFrust: ")
-            hfmax = input("HFmax: ")
+            hfwerk = int(input("HFwerk: "))
+            hfrust = int(input("HFrust: "))
+            hfmax = int(input("HFmax: "))
             print("Karvonen: %.2f" % bereken_karvonen(hfwerk, hfrust, hfmax), "\n")
         elif keuze == '5':
             print("Ending process")
